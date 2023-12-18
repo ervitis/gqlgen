@@ -20,4 +20,4 @@ require (
 	gopkg.in/yaml.v2 v2.2.4
 )
 
-replace github.com/99designs/gqlgen v0.11.4 => github.com/ervitis/gqlgen v0.11.4
+replace github.com/99designs/gqlgen => github.com/ervitis/gqlgen v0.11.4
