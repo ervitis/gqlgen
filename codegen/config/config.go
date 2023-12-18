@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/99designs/gqlgen/internal/code"
+	"github.com/ervitis/gqlgen/internal/code"
 	"github.com/pkg/errors"
 	"github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
@@ -178,8 +178,8 @@ func (c *Config) Init() error {
 
 	// prefetch all packages in one big packages.Load call
 	pkgs := []string{
-		"github.com/99designs/gqlgen/graphql",
-		"github.com/99designs/gqlgen/graphql/introspection",
+		"github.com/ervitis/gqlgen/graphql",
+		"github.com/ervitis/gqlgen/graphql/introspection",
 	}
 	pkgs = append(pkgs, c.Models.ReferencedPackages()...)
 	pkgs = append(pkgs, c.AutoBind...)
@@ -527,26 +527,26 @@ func (c *Config) autobind() error {
 
 func (c *Config) injectBuiltins() {
 	builtins := TypeMap{
-		"__Directive":         {Model: StringList{"github.com/99designs/gqlgen/graphql/introspection.Directive"}},
-		"__DirectiveLocation": {Model: StringList{"github.com/99designs/gqlgen/graphql.String"}},
-		"__Type":              {Model: StringList{"github.com/99designs/gqlgen/graphql/introspection.Type"}},
-		"__TypeKind":          {Model: StringList{"github.com/99designs/gqlgen/graphql.String"}},
-		"__Field":             {Model: StringList{"github.com/99designs/gqlgen/graphql/introspection.Field"}},
-		"__EnumValue":         {Model: StringList{"github.com/99designs/gqlgen/graphql/introspection.EnumValue"}},
-		"__InputValue":        {Model: StringList{"github.com/99designs/gqlgen/graphql/introspection.InputValue"}},
-		"__Schema":            {Model: StringList{"github.com/99designs/gqlgen/graphql/introspection.Schema"}},
-		"Float":               {Model: StringList{"github.com/99designs/gqlgen/graphql.Float"}},
-		"String":              {Model: StringList{"github.com/99designs/gqlgen/graphql.String"}},
-		"Boolean":             {Model: StringList{"github.com/99designs/gqlgen/graphql.Boolean"}},
+		"__Directive":         {Model: StringList{"github.com/ervitis/gqlgen/graphql/introspection.Directive"}},
+		"__DirectiveLocation": {Model: StringList{"github.com/ervitis/gqlgen/graphql.String"}},
+		"__Type":              {Model: StringList{"github.com/ervitis/gqlgen/graphql/introspection.Type"}},
+		"__TypeKind":          {Model: StringList{"github.com/ervitis/gqlgen/graphql.String"}},
+		"__Field":             {Model: StringList{"github.com/ervitis/gqlgen/graphql/introspection.Field"}},
+		"__EnumValue":         {Model: StringList{"github.com/ervitis/gqlgen/graphql/introspection.EnumValue"}},
+		"__InputValue":        {Model: StringList{"github.com/ervitis/gqlgen/graphql/introspection.InputValue"}},
+		"__Schema":            {Model: StringList{"github.com/ervitis/gqlgen/graphql/introspection.Schema"}},
+		"Float":               {Model: StringList{"github.com/ervitis/gqlgen/graphql.Float"}},
+		"String":              {Model: StringList{"github.com/ervitis/gqlgen/graphql.String"}},
+		"Boolean":             {Model: StringList{"github.com/ervitis/gqlgen/graphql.Boolean"}},
 		"Int": {Model: StringList{
-			"github.com/99designs/gqlgen/graphql.Int",
-			"github.com/99designs/gqlgen/graphql.Int32",
-			"github.com/99designs/gqlgen/graphql.Int64",
+			"github.com/ervitis/gqlgen/graphql.Int",
+			"github.com/ervitis/gqlgen/graphql.Int32",
+			"github.com/ervitis/gqlgen/graphql.Int64",
 		}},
 		"ID": {
 			Model: StringList{
-				"github.com/99designs/gqlgen/graphql.ID",
-				"github.com/99designs/gqlgen/graphql.IntID",
+				"github.com/ervitis/gqlgen/graphql.ID",
+				"github.com/ervitis/gqlgen/graphql.IntID",
 			},
 		},
 	}
@@ -559,10 +559,10 @@ func (c *Config) injectBuiltins() {
 
 	// These are additional types that are injected if defined in the schema as scalars.
 	extraBuiltins := TypeMap{
-		"Time":   {Model: StringList{"github.com/99designs/gqlgen/graphql.Time"}},
-		"Map":    {Model: StringList{"github.com/99designs/gqlgen/graphql.Map"}},
-		"Upload": {Model: StringList{"github.com/99designs/gqlgen/graphql.Upload"}},
-		"Any":    {Model: StringList{"github.com/99designs/gqlgen/graphql.Any"}},
+		"Time":   {Model: StringList{"github.com/ervitis/gqlgen/graphql.Time"}},
+		"Map":    {Model: StringList{"github.com/ervitis/gqlgen/graphql.Map"}},
+		"Upload": {Model: StringList{"github.com/ervitis/gqlgen/graphql.Upload"}},
+		"Any":    {Model: StringList{"github.com/ervitis/gqlgen/graphql.Any"}},
 	}
 
 	for typeName, entry := range extraBuiltins {

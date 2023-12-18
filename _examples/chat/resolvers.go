@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/99designs/gqlgen/graphql"
+	"github.com/ervitis/gqlgen/graphql"
 )
 
 type resolver struct {

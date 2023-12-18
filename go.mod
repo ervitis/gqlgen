@@ -3,7 +3,6 @@ module github.com/ervitis/gqlgen
 go 1.12
 
 require (
-	github.com/99designs/gqlgen v0.0.0-00010101000000-000000000000
 	github.com/gorilla/websocket v1.2.0
 	github.com/hashicorp/golang-lru v0.5.0
 	github.com/logrusorgru/aurora v0.0.0-20200102142835-e9ef32dff381
@@ -19,5 +18,3 @@ require (
 	golang.org/x/tools v0.0.0-20200114235610-7ae403b6b589
 	gopkg.in/yaml.v2 v2.2.4
 )
-
-replace github.com/99designs/gqlgen => github.com/ervitis/gqlgen v0.11.4
